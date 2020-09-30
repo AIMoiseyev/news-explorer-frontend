@@ -1,0 +1,35 @@
+{
+  "name": "diploma-project-news-explorer-frontend",
+  "version": "0.0.1",
+  "description": "Graduation work Yandex Praktikum",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIMoiseyev/news-explorer-frontend.git"
+  },
+  "author": "Alexander Moiseyev & Yandex Praktikum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AIMoiseyev/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/AIMoiseyev/news-explorer-frontend#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.4.1"
+  }
+}
