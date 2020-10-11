@@ -1,0 +1,26 @@
+.card__icon_type_keyword {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  left: 24px;
+}
+
+@media (max-width: 1000px) {
+  .card__icon_type_keyword {
+    left: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__icon_type_keyword {
+    left: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__icon_type_keyword {
+    left: 16px;
+  }
+}

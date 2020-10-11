@@ -1,0 +1,22 @@
+@import url(./__container/about-author__container.css);
+@import url(./__picture/about-author__picture.css);
+@import url(./__text-container/about-author__text-container.css);
+@import url(./__title/about-author__title.css);
+@import url(./__paragraph/about-author__paragraph.css);
+
+.about-author {
+  min-height: 624px;
+  background-color: white;
+}
+
+@media (max-width: 1024px) {
+  .about-author {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-author {
+    min-height: 354px;
+  }
+}

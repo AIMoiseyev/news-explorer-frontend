@@ -1,0 +1,37 @@
+.header__button {
+  background: transparent;
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: inherit;
+  box-sizing: border-box;
+  padding: 0 19px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  position: relative;
+}
+
+.header__button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .header__button {
+    min-height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__button {
+    font-size: 18px;
+    min-height: 56px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}

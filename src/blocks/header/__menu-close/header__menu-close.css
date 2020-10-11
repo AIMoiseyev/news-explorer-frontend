@@ -1,0 +1,21 @@
+@import url(./_hidden/header__menu-close_hidden.css);
+@import url(./_color/header__menu-close_color_white.css);
+@import url(./_color/header__menu-close_color_black.css);
+
+
+.header__menu-close {
+  display: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  z-index: 10;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .header__menu-close {
+    display: block;
+  }
+}

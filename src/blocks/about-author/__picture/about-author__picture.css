@@ -1,0 +1,19 @@
+.about-author__picture {
+  border-radius: 1000px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-author__picture {
+    min-height: 232px;
+    min-width: 232px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-author__picture {
+
+    min-height: 272px;
+    min-width: 272px;
+  }
+}

@@ -8,10 +8,13 @@ const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
 
 module.exports = {
-  entry: {main: './src/index.js'},
+  entry: {
+    main: './src/pages/main/index.js',
+    news: './src/pages/saved-news/index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: 'js/[name].[chunkhash].js'
   },
   module: {
     rules: [{
@@ -59,7 +62,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+    new MiniCssExtractPlugin({filename: './styles/[name].[contenthash].css'}),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require("cssnano"),
@@ -70,8 +73,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/index.html',
-      filename: 'index.html'
+      template: './src/pages/main/index.html',
+      filename: 'index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/pages/saved-news/news.html',
+      filename: 'news.html',
+      chunks: ['news'],
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({

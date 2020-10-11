@@ -1,0 +1,36 @@
+.card__icon_type_delete {
+
+}
+
+.card__icon_type_delete {
+  background-image: url("../../../../images/trash.svg");
+  background-repeat: no-repeat;
+  right: 24px;
+  background-position: center;
+}
+
+.card__icon_type_delete:hover {
+  background-image: url("../../../../images/trash-black.svg");
+}
+
+.card__icon_type_delete:hover~.card__icon_type_description {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .card__icon_type_delete {
+    right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__icon_type_delete {
+    right: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__icon_type_delete {
+    right: 16px;
+  }
+}

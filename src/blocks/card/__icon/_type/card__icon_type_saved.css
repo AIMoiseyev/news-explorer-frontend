@@ -1,0 +1,24 @@
+.card__icon_type_saved {
+  background-image: url("../../../../images/savedflag.svg");
+  background-repeat: no-repeat;
+  right: 24px;
+  background-position: center;
+}
+
+@media (max-width: 1000px) {
+  .card__icon_type_saved {
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__icon_type_saved {
+    right: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__icon_type_saved {
+    right: 16px;
+  }
+}

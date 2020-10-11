@@ -1,0 +1,19 @@
+@import url(./_color/header__menu_color_white.css);
+@import url(./_hidden/header__menu_hidden.css);
+@import url(./_color/header__menu_color_black.css);
+
+.header__menu {
+  display: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .header__menu {
+    display: block;
+  }
+}

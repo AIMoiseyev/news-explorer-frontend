@@ -1,0 +1,32 @@
+.card__icon_type_save {
+  background-image: url("../../../../images/flag.svg");
+  background-repeat: no-repeat;
+  right: 24px;
+  background-position: center;
+}
+
+.card__icon_type_save:hover {
+  background-image: url("../../../../images/hoverflag.svg");
+}
+
+.card__icon_type_save:hover~.card__icon_type_description {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .card__icon_type_save {
+    right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__icon_type_save {
+    right: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__icon_type_save {
+    right: 16px;
+  }
+}

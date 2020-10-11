@@ -1,0 +1,26 @@
+.card__image {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  height: 272px;
+  margin: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .card__image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__image{
+    height: 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .card__image{
+    height: 196px;
+  }
+}
