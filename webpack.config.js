@@ -36,14 +36,14 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
+          isDev ? { loader: 'style-loader' } : {
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              importLoaders: 2,
+              publicPath: '../',
             },
           },
-          "postcss-loader",
+          'css-loader',
+          'postcss-loader',
         ],
       },
       {

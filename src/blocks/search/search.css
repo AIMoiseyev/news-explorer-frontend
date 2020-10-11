@@ -5,7 +5,7 @@
 .search {
   max-width: 1440px;
   min-height: 576px;
-  background-image: url("../../images/main-picture.jpg");
+  background-image: url(../../images/main-picture.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
