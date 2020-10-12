@@ -1,0 +1,32 @@
+@import url(./_padding/news__grid-container_padding_top.css);
+
+.news__grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .news__grid-container {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news__grid-container {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .news__grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .news__grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

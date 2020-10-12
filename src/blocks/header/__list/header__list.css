@@ -1,0 +1,35 @@
+@import url(./_logged/header__list_logged_in.css);
+@import url(./_logged/header__list_logged_out.css);
+@import url(./_mobile-opened/header__list_mobile-opened.css);
+@import url(./_color/header__list_color_black.css);
+@import url(./_color/header__list_color_white.css);
+
+.header__list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+@media (max-width: 700px) {
+  .header__list {
+    display: flex;
+    padding: 56px 16px 24px;
+    flex-direction: column;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  /*.header__list:before {*/
+  /*  content: '';*/
+  /*  width: 100%;*/
+  /*  height: 1px;*/
+  /*  position: absolute;*/
+  /*  border-bottom: 1px solid;*/
+  /*  top: 56px;*/
+  /*  left: 0;*/
+  /*  color: white;*/
+  /*}*/
+}

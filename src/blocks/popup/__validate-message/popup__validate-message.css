@@ -1,0 +1,14 @@
+@import url(./_position/popup__validate-message_position_input.css);
+@import url(./_position/popup__validate-message_position_submit.css);
+@import url(./_visible/popup__error-message_visible.css);
+
+.popup__validate-message {
+  position: absolute;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  display: none;
+}

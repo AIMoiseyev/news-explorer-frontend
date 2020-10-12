@@ -1,0 +1,37 @@
+@import url(./_type/card__icon_type_save.css);
+@import url(./_type/card__icon_type_description.css);
+@import url(./_type/card__icon_type_saved.css);
+@import url(./_visibility/card__icon_visibility_hidden.css);
+@import url(./_type/card__icon_type_delete.css);
+@import url(./_type/card__icon_type_keyword.css);
+
+.card__icon {
+  background-color: white;
+  position: absolute;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+  border: none;
+  color: black;
+  text-align: center;
+  top: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .card__icon{
+    top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__icon{
+    top: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__icon{
+    top: 16px;
+  }
+}

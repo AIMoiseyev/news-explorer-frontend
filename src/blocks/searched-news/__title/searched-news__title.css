@@ -1,0 +1,30 @@
+.searched-news__title {
+
+}
+
+.searched-news__title {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  display: block;
+  max-width: 500px;
+  margin: 28px 0 0;
+}
+
+@media (max-width: 768px) {
+  .searched-news__title {
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 340px;
+    margin: 16px 0 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .searched-news__title {
+    max-width: 70%;
+  }
+}

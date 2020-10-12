@@ -1,0 +1,21 @@
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 740px) {
+  .footer__container {
+    flex-direction: column-reverse;
+    padding-top: 20px;
+    padding-bottom: 22px;
+    min-height: 176px;
+  }
+}

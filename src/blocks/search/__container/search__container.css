@@ -1,0 +1,19 @@
+.search__container {
+  box-sizing: border-box;
+  max-width: 608px;
+  margin: 0 auto 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .search__container {
+    margin: 0 auto 0;
+    max-width: 448px;
+  }
+}
+
+@media (max-width: 700px) {
+  .search__container {
+    padding: 0 16px;
+  }
+}

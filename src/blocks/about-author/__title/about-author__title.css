@@ -1,0 +1,18 @@
+.about-author__title {
+  margin: 0 0 24px;
+  max-width: 496px;
+  font-family: Roboto Slab, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+}
+
+@media (max-width: 768px) {
+  .about-author__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+}

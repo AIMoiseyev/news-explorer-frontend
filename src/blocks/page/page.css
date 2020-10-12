@@ -1,0 +1,21 @@
+@import "../../vendor/normalize.css";
+@import "../../vendor/fonts.css";
+@import url(./__header/page__header.css);
+@import url(./_scroll-off/page_scroll-off.css);
+
+.page {
+  min-width: 320px;
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

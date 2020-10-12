@@ -1,0 +1,22 @@
+.popup__signup-link {
+  display: block;
+  width: max-content;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  color: #2F71E5;
+  text-decoration: none;
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.popup__signup-link:hover {
+  color: #347EFF;
+}

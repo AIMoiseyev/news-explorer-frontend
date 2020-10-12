@@ -1,0 +1,10 @@
+.header__link_active {
+  border-bottom: 3px solid;
+  color: inherit;
+}
+
+@media (max-width: 700px) {
+  .header__link_active {
+    border: 0;
+  }
+}

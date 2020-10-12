@@ -1,0 +1,3 @@
+.header__list_logged_in .header__list-item_logged-out {
+  display: none;
+}

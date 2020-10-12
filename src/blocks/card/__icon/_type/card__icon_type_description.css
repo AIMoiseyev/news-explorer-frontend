@@ -1,0 +1,16 @@
+.card__icon_type_description {
+  right: 69px;
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: black;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .card__icon_type_description {
+    visibility: hidden;
+  }
+}
