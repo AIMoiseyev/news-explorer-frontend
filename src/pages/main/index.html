@@ -24,7 +24,7 @@
       class="header__menu-close header__menu-close_color_white  header__menu-close_hidden"
     ></button>
     <nav class="header__navigation">
-      <ul class="header__list header__list_color_white header__list_logged_in">
+      <ul class="header__list header__list_color_white header__list_logged_out">
         <li class="header__list-item">
           <a class="header__link header__link_color_white header__link_active" href="./">Главная</a>
         </li>
@@ -38,7 +38,11 @@
                                                            alt="кнопка деавторизации"></button>
         </li>
         <li class="header__list-item header__list-item_logged-out">
-          <button class="button header__button" type="button">Регистрация</button>
+          <button class="button header__button"
+                  type="button"
+                  id="signup-button"
+          >Регистрация
+          </button>
         </li>
       </ul>
     </nav>
@@ -186,7 +190,7 @@
   </section>
 </main>
 
-<div class="popup">
+<div class="popup popup_type_signin">
   <div class="popup__container">
     <img
       src="<%=require('./../../images/close.svg')%>"
@@ -237,7 +241,7 @@
   </div>
 </div>
 
-<div class="popup">
+<div class="popup popup_type_signup">
   <div class="popup__container">
     <img
       src="<%=require('./../../images/close.svg')%>"
@@ -254,11 +258,10 @@
           name="email"
           class="popup__input"
           placeholder="Введите почту"
-          pattern="[A-Za-z0-9]+([-\._][A-Za-z0-9]+){0,}@[A-Za-z0-9]+(([-_]?[a-zA-Z0-9]{0,}\.?[a-zA-Z0-9]+)+)?\.[A-Za-z]{2,}"
         />
         <span
-          class="popup__validate-message popup__validate-message_position_input"
-        >Неправильный формат email</span
+          class="popup__validate-message popup__validate-message_position_input popup__validate-message_visible"
+        ></span
         >
       </div>
       <div class="popup__input-container">
@@ -274,7 +277,7 @@
         />
         <span
           class="popup__validate-message popup__validate-message_position_input popup__validate-message_visible"
-        >Пароль должен быть от 8 до 30 символов</span>
+        ></span>
       </div>
       <div class="popup__input-container">
         <span class="popup__input-name">Имя</span>
@@ -288,14 +291,14 @@
           placeholder="Введите своё имя"
         />
         <span
-          class="popup__validate-message popup__validate-message_position_input"
-        >Имя должно быть от 2 до 30 символов</span>
+          class="popup__validate-message popup__validate-message_position_input popup__validate-message_visible"
+        ></span>
       </div>
       <span
         class="popup__validate-message popup__validate-message_position_submit popup__validate-message_visible"
-      >Такой пользователь уже есть</span
+      ></span
       >
-      <button class="button popup__button" type="submit">
+      <button class="button popup__button popup__button_disabled" type="submit" disabled>
         Зарегистрироваться
       </button>
       <span class="popup__text"
@@ -305,7 +308,7 @@
   </div>
 </div>
 
-<div class="popup">
+<div class="popup popup_type_registered">
   <div class="popup__container">
     <img
       src="<%=require('./../../images/close.svg')%>"
