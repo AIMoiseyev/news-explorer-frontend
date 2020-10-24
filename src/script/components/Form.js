@@ -7,8 +7,7 @@ export default class Form extends BaseComponent {
     super(props);
     this.container = container
     this.api = api;
-    this.submitButton = props.signUpSubmitButton;
-    this.redirectButton = props.signFormRedirectButton;
+    this.submitButton = props;
     this.popup = popup
     this.regPopup = regPopup
   }
@@ -91,6 +90,11 @@ export default class Form extends BaseComponent {
 
   submit = (event) => {
     event.preventDefault()
+    if(this.container.name === 'signup') this.singUp();
+    if(this.container.name === 'signin') this.signIn();
+  }
+
+  singUp = () => {
     const values = {}
     this.inputs.forEach((input) => {
       if (input.tagName === 'INPUT') {
@@ -99,7 +103,7 @@ export default class Form extends BaseComponent {
     })
     const {email, password, username} = values
 
-    this.api.signup(email, password, username).then((data) => {
+    this.api.signUp(email, password, username).then((data) => {
       this.popup.close()
       this._clear()
       this.regPopup.open()
@@ -110,6 +114,33 @@ export default class Form extends BaseComponent {
         error.textContent = 'Поля заполнены неверно'
       } else if (err === 409) {
         error.textContent = 'Такой пользователь уже существует';
+      } else {
+        error.textContent = `Упс, ошибка ${err}`
+      }
+    })
+  }
+
+  signIn = () => {
+    const values = {}
+    this.inputs.forEach((input) => {
+      if (input.tagName === 'INPUT') {
+        values[input.name] = input.value
+      }
+    })
+
+    const {email, password} = values
+
+    this.api.signIn(email, password).then((data) => {
+      this.popup.close()
+      this._clear()
+      window.location.reload();
+    }).catch((err) => {
+      this.setSubmitButtonState(this.submitButton, false)
+      const error = this.submitButton.previousElementSibling;
+      if (err === 401) {
+        error.textContent = 'Неправильные почта или пароль'
+      } else if (err === 400) {
+        error.textContent = 'Поля заполнены неверно'
       } else {
         error.textContent = `Упс, ошибка ${err}`
       }

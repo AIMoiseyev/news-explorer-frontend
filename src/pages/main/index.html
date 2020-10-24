@@ -32,8 +32,8 @@
           <a class="header__link header__link_color_grey" href="./news.html">Сохранённые статьи</a>
         </li>
         <li class="header__list-item header__list-item_logged-in">
-          <button class="button header__button" type="button">Гретта
-            <span class="header__space">&nbsp;</span> <img class="header__button-image"
+          <button class="button header__button" type="button">
+            <span class="header__button-text">Гретта</span>&nbsp;<img class="header__button-image"
                                                            src="<%=require('../../images/logout.svg')%>"
                                                            alt="кнопка деавторизации"></button>
         </li>
@@ -211,7 +211,7 @@
         />
         <span
           class="popup__validate-message popup__validate-message_position_input popup__validate-message_visible"
-        >Неправильный формат email</span
+        ></span
         >
       </div>
       <div class="popup__input-container">
@@ -226,10 +226,14 @@
           placeholder="Введите пароль"
         />
         <span
-          class="popup__validate-message popup__validate-message_position_input"
-        >Пароль должен быть от 8 до 30 символов</span>
+          class="popup__validate-message popup__validate-message_position_input popup__validate-message_visible"
+        ></span>
       </div>
-      <button class="button popup__button" type="submit">
+      <span
+        class="popup__validate-message popup__validate-message_position_submit popup__validate-message_visible"
+      ></span
+      >
+      <button class="button popup__button popup__button_disabled" type="submit" disabled>
         Войти
       </button>
       <span class="popup__text"
