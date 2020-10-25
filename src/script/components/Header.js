@@ -2,12 +2,13 @@
 import BaseComponent from "./BaseComponent";
 
 export default class Header extends BaseComponent {
-  constructor(props, container, mainApi) {
+  constructor(props, container, mainApi, mainPath) {
     super(props);
     this.container = container
     this.mainApi = mainApi
     this.headerList = this.container.querySelector('.header__list')
     this.userName = props
+    this.mainPath = mainPath
   }
 
   _setUserName = (name) => {
@@ -16,8 +17,14 @@ export default class Header extends BaseComponent {
 
   _logout = () => {
     return this.mainApi.logout().then((data) => {
+      if(window.location.pathname !== this.mainPath) {
+        window.location.replace(this.mainPath);
+        return;
+      }
       this.headerList.classList.remove('header__list_logged_in')
       this.headerList.classList.add('header__list_logged_out')
+      localStorage.setItem('loggedIn', 'false');
+      window.location.reload();
     }).catch((err) => {
       throw new Error(err)
     })
@@ -40,11 +47,14 @@ export default class Header extends BaseComponent {
       console.log('render', data)
       if (data) {
         this._setLoginHeader(data)
+        localStorage.setItem('loggedIn', 'true');
       } else {
         this._setLogoutHeader()
+        localStorage.setItem('loggedIn', 'false');
       }
     }).catch((err) => {
       this._setLogoutHeader()
+      localStorage.setItem('loggedIn', 'false');
       throw new Error(err)
     })
   }

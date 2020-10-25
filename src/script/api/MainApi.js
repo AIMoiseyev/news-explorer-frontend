@@ -66,4 +66,52 @@ export default class MainApi {
       return Promise.reject(res.status)
     })
   }
+
+  createArticle(data, keyWord) {
+    return fetch(`${this.baseUrl}/articles`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: this.headers,
+      body: JSON.stringify({
+        keyword: keyWord,
+        title: data.title,
+        text: data.description,
+        date: data.publishedAt,
+        source: data.source.name,
+        link: data.url,
+        image: data.urlToImage,
+      })
+    }).then((res) => {
+      if (res.ok) {
+        return  res.json();
+      }
+      return Promise.reject(res.status)
+    })
+  }
+
+  deleteArticle(id) {
+    return fetch(`${this.baseUrl}/articles/${id}`, {
+      method: 'DELETE',
+      credentials: 'include',
+      headers: this.headers,
+    }).then((res) => {
+      if (res.ok) {
+        return  res.json();
+      }
+      return Promise.reject(res.status)
+    })
+  }
+
+  getArticles() {
+    return fetch(`${this.baseUrl}/articles`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: this.headers,
+    }).then((res) => {
+      if (res.ok) {
+        return  res.json();
+      }
+      return Promise.reject(res.status)
+    })
+  }
 }

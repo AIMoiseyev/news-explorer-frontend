@@ -13,8 +13,8 @@ export default class NewsApi {
 
   getNews(keyWord) {
     const currentDate = formatDate(new Date());
-    const previousDate = formatDate(previousDate(this.searchPeriodDays))
-    return fetch(`${this.baseUrl}/${keyWord}&from=${previousDate}&to=${currentDate}&language=${this.newsLang}&sortBy=${this.newsLang}&pageSize=${this.searchPeriodDays}&apiKey=${this.key}`)
+    const previousDateValue = formatDate(previousDate(this.searchPeriodDays))
+    return fetch(`${this.baseUrl}/${keyWord}&from=${previousDateValue}&to=${currentDate}&language=${this.newsLang}&sortBy=${this.newsLang}&pageSize=${this.searchPeriodDays}&apiKey=${this.key}`)
       .then((res) => {
         if (res.ok) {
           return res.json()

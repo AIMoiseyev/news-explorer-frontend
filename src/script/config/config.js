@@ -6,7 +6,7 @@ const MAIN_API_OPTIONS = {
 }
 
 const NEWS_API_OPTIONS = {
-  baseUrl: 'https://newsapi.org/v2/top-headlines?q=',
+  baseUrl: 'https://newsapi.org/v2/everything?q=',
   key: '6530199df185419887bef11270be9f05',
   newsLang: 'ru',
   searchPeriodDays: 7,
@@ -14,4 +14,6 @@ const NEWS_API_OPTIONS = {
   sortBy: 'popularity',
 }
 
-export {MAIN_API_OPTIONS, NEWS_API_OPTIONS}
+const MAIN_PATH = '/';
+
+export {MAIN_API_OPTIONS, NEWS_API_OPTIONS, MAIN_PATH}

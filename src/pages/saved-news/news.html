@@ -32,8 +32,8 @@
           <a class="header__link header__link_color_black header__link_active" href="./news.html">Сохранённые статьи</a>
         </li>
         <li class="header__list-item header__list-item_logged-in">
-          <button class="button header__button" type="button">Гретта
-            <span class="header__space">&nbsp;</span>
+          <button class="button header__button" type="button">
+            <span class="header__button-text">Гретта</span>
             <img class="header__button-image"
                  src="<%=require('../../images/logout-black.svg')%>"
                  alt="кнопка деавторизации"></button>
@@ -62,7 +62,7 @@
     </div>
   </section>
 
-  <section class="news">
+  <section class="news news_visible">
     <div class="container news__container">
       <div class="news__grid-container news__grid-container_padding_top">
         <div class="card">

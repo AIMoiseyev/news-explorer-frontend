@@ -133,6 +133,7 @@ export default class Form extends BaseComponent {
     this.api.signIn(email, password).then((data) => {
       this.popup.close()
       this._clear()
+      localStorage.setItem('loggedIn', 'true');
       window.location.reload();
     }).catch((err) => {
       this.setSubmitButtonState(this.submitButton, false)
