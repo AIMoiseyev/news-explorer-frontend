@@ -10,10 +10,12 @@ export default class Form extends BaseComponent {
     this.submitButton = props;
     this.popup = popup
     this.regPopup = regPopup
+    this.error = this.container.querySelector('.popup__validate-message_position_submit')
   }
 
   _validateForm = (event) => {
     event.preventDefault();
+    this.error.textContent = '';
 
     const inputs = Array.from(this.container.elements);
     this.inputs = inputs
@@ -108,13 +110,12 @@ export default class Form extends BaseComponent {
       this.regPopup.open()
     }).catch((err) => {
       this._setSubmitButtonState(this.submitButton, false)
-      const error = this.submitButton.previousElementSibling;
       if (err === 400) {
-        error.textContent = 'Поля заполнены неверно'
+        this.error.textContent = 'Поля заполнены неверно'
       } else if (err === 409) {
-        error.textContent = 'Такой пользователь уже существует';
+        this.error.textContent = 'Такой пользователь уже существует';
       } else {
-        error.textContent = `Упс, ошибка ${err}`
+        this.error.textContent = `Упс, ошибка ${err}`
       }
     })
   }
@@ -136,13 +137,12 @@ export default class Form extends BaseComponent {
       window.location.reload();
     }).catch((err) => {
       this._setSubmitButtonState(this.submitButton, false)
-      const error = this.submitButton.previousElementSibling;
       if (err === 401) {
-        error.textContent = 'Неправильные почта или пароль'
+        this.error.textContent = 'Неправильные почта или пароль'
       } else if (err === 400) {
-        error.textContent = 'Поля заполнены неверно'
+        this.error.textContent = 'Поля заполнены неверно'
       } else {
-        error.textContent = `Упс, ошибка ${err}`
+        this.error.textContent = `Упс, ошибка ${err}`
       }
     })
   }

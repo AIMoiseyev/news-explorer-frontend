@@ -14,6 +14,6 @@ const NEWS_API_OPTIONS = {
   sortBy: 'popularity',
 }
 
-const MAIN_PATH = '/';
+const MAIN_PATH = '/news-explorer-frontend/';
 
 export {MAIN_API_OPTIONS, NEWS_API_OPTIONS, MAIN_PATH}
