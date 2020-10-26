@@ -39,8 +39,8 @@
 1. Скачать или склонировать репозиторий
 2. Установить зависимости при помощи npm - `npm i`
 3. Запуск:
-    - В режиме development - `npm run dev`
-    - Production-build - `npm run build`
+    - В режиме development - `npm run dev`, `const MAIN_PATH = '/'`
+    - Production-build - `npm run build`, `const MAIN_PATH = '/news-explorer-frontend/'`
     - Production-build на github pages - `npm run deploy`
 
 ## Github pages:
