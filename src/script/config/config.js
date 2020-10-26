@@ -6,7 +6,7 @@ const MAIN_API_OPTIONS = {
 }
 
 const NEWS_API_OPTIONS = {
-  baseUrl: 'https://newsapi.org/v2/everything?q=',
+  baseUrl: 'https://nomoreparties.co/news/v2/everything?q=',
   key: '6530199df185419887bef11270be9f05',
   newsLang: 'ru',
   searchPeriodDays: 7,
