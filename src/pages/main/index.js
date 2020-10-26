@@ -48,23 +48,19 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
   const cardList = new NewsCardList(showMoreButton, card, newsContainer, preloader)
   const popupSignIn = new Popup(signInPopupCloseButton, popupSignInContainer, pageElement);
   const popupSignUp = new Popup(signUpPopupCloseButton, popupSignContainer, pageElement);
-
   const popupRegistered = new Popup(registeredPopupCloseButton, popupRegisteredContainer, pageElement);
-
   const signUpForm = new Form(signUpSubmitButton, signForm, mainApi, popupSignUp, popupRegistered);
-  signUpForm.setEventListeners();
-
   const loginForm = new Form(signInSubmitButton, signInForm, mainApi, popupSignIn, popupRegistered);
-  loginForm.setEventListeners()
-
   const searchForm = new SearchForm(searchSubmitButton, searchContainer, newsApi, notFound, cardList);
-  searchForm.setEventListeners();
 
   const changePopup = function (currentPopup, newPopup) {
     currentPopup.close();
     newPopup.open();
   }
 
+  signUpForm.setEventListeners();
+  loginForm.setEventListeners();
+  searchForm.setEventListeners();
   mobileOpenButton.addEventListener('click', () => mobileMenuOpen(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
   mobileCloseButton.addEventListener('click', () => mobileMenuClose(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
   signUpButton.addEventListener('click', popupSignUp.open);
