@@ -16,6 +16,7 @@
   text-align: center;
   top: 24px;
   cursor: pointer;
+  z-index: 11;
 }
 
 @media (max-width: 1000px) {

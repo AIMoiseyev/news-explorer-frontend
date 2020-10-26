@@ -9,6 +9,8 @@ import NewsApi from "../../script/api/NewsApi";
 import SearchForm from "../../script/components/SearchForm";
 import NewsCard from "../../script/components/NewsCard";
 import NewsCardList from "../../script/components/NewsCardList";
+import mobileMenuOpen from "../../script/utils/mobile-menu-open";
+import mobileMenuClose from "../../script/utils/mobile-menu-close";
 
 (function () {
   const newsApi = new NewsApi(NEWS_API_OPTIONS);
@@ -18,7 +20,7 @@ import NewsCardList from "../../script/components/NewsCardList";
   const signUpButton = document.querySelector('#signup-button');
   const mobileOpenButton = document.querySelector('.header__menu');
   const mobileCloseButton = document.querySelector('.header__menu-close');
-  const headerNavigation = document.querySelector('.header__navigation')
+  const headerNavigation = document.querySelector('.header__navigation');
   const popupSignContainer = document.querySelector('.popup_type_signup');
   const popupRegisteredContainer = document.querySelector('.popup_type_registered');
   const popupSignInContainer = document.querySelector('.popup_type_signin');
@@ -69,25 +71,25 @@ import NewsCardList from "../../script/components/NewsCardList";
     newPopup.open();
   }
 
-  const mobileMenuOpen = function (openButton, closeButton, nav, page) {
-    openButton.classList.add('header__menu_hidden')
-    closeButton.classList.remove('header__menu-close_hidden')
-    nav.classList.add('header__navigation_mobile-opened')
-    page.classList.add('page_scroll-off')
-  }
-  const mobileMenuClose = function (openButton, closeButton, nav, page) {
-    closeButton.classList.add('header__menu-close_hidden')
-    openButton.classList.remove('header__menu_hidden')
-    nav.classList.remove('header__navigation_mobile-opened')
-    page.classList.remove('page_scroll-off')
-  }
+  // const mobileMenuOpen = function (openButton, closeButton, nav, page) {
+  //   openButton.classList.add('header__menu_hidden')
+  //   closeButton.classList.remove('header__menu-close_hidden')
+  //   nav.classList.add('header__navigation_mobile-opened')
+  //   page.classList.add('page_scroll-off')
+  // }
+  // const mobileMenuClose = function (openButton, closeButton, nav, page) {
+  //   closeButton.classList.add('header__menu-close_hidden')
+  //   openButton.classList.remove('header__menu_hidden')
+  //   nav.classList.remove('header__navigation_mobile-opened')
+  //   page.classList.remove('page_scroll-off')
+  // }
 
   mobileOpenButton.addEventListener('click', () => mobileMenuOpen(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
-  mobileCloseButton.addEventListener('click', () => mobileMenuClose(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement))
+  mobileCloseButton.addEventListener('click', () => mobileMenuClose(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
   signUpButton.addEventListener('click', popupSignUp.open);
   redirectSignInButton.addEventListener('click', () => changePopup(popupSignIn, popupSignUp));
   redirectSignUpButton.addEventListener('click', () => changePopup(popupSignUp, popupSignIn));
-  redirectRegisteredButton.addEventListener('click', () => changePopup(popupRegistered, popupSignIn))
+  redirectRegisteredButton.addEventListener('click', () => changePopup(popupRegistered, popupSignIn));
 
   header.render();
 })();

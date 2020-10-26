@@ -51,65 +51,65 @@
     <div class="container searched-news__container">
       <span class="searched-news__hub-name">Сохранённые статьи</span>
       <h2 class="searched-news__title">
-        Грета, у вас 5 сохранённых статей
       </h2>
       <p class="searched-news__subtitle">
         По ключевым словам:
-        <span class="searched-news__keyword">Природа</span>,
-        <span class="searched-news__keyword">Тайга</span> и
-        <span class="searched-news__keyword">2 другим</span>
+        <span class="searched-news__keyword" id="first"></span>
+        <span class="searched-news__keyword" id="second"></span>
+        <span class="searched-news__union"> и</span>
+        <span class="searched-news__keyword" id="third"></span>
       </p>
     </div>
   </section>
 
-  <section class="news news_visible">
+  <section class="news">
     <div class="container news__container">
       <div class="news__grid-container news__grid-container_padding_top">
-        <div class="card">
-          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>
-          <button class="card__icon card__icon_type_delete" type="button"></button>
-          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>
-          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>
-          <div class="card__container">
-            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur
-              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>
-            <p class="card__source">Риа</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>
-          <button class="card__icon card__icon_type_delete" type="button"></button>
-          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>
-          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>
-          <div class="card__container">
-            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur
-              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>
-            <p class="card__source">Риа</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>
-          <button class="card__icon card__icon_type_delete" type="button"></button>
-          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>
-          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>
-          <div class="card__container">
-            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
-              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur
-              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>
-            <p class="card__source">Риа</p>
-          </div>
-        </div>
+<!--        <div class="card">-->
+<!--          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>-->
+<!--          <button class="card__icon card__icon_type_delete" type="button"></button>-->
+<!--          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>-->
+<!--          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>-->
+<!--          <div class="card__container">-->
+<!--            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>-->
+<!--            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>-->
+<!--            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости-->
+<!--              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,-->
+<!--              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur-->
+<!--              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>-->
+<!--            <p class="card__source">Риа</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>-->
+<!--          <button class="card__icon card__icon_type_delete" type="button"></button>-->
+<!--          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>-->
+<!--          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>-->
+<!--          <div class="card__container">-->
+<!--            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>-->
+<!--            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>-->
+<!--            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости-->
+<!--              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,-->
+<!--              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur-->
+<!--              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>-->
+<!--            <p class="card__source">Риа</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--          <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>-->
+<!--          <button class="card__icon card__icon_type_delete" type="button"></button>-->
+<!--          <button class="card__icon card__icon_type_description" type="button">Убрать из сохранённых</button>-->
+<!--          <button class="card__icon card__icon_type_keyword" type="button">Природа</button>-->
+<!--          <div class="card__container">-->
+<!--            <time class="card__date" datetime="2020-08-02">2 августа, 2019</time>-->
+<!--            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>-->
+<!--            <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости-->
+<!--              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где Lorem ipsum dolor sit amet,-->
+<!--              consectetur adipisicing elit. Autem dolorem, eius labore nobis rem sed sunt ut voluptatibus? Consequatur-->
+<!--              eligendi est magnam numquam perspiciatis, quidem velit vero! Fugiat, quam, ullam!</p>-->
+<!--            <p class="card__source">Риа</p>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
       <button class="button news__button" type="button">
         Показать еще

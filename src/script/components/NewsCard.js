@@ -10,6 +10,7 @@ export default class NewsCard {
     const isLoggedIn = localStorage.getItem('loggedIn');
     const card = document.createElement('div');
     const cardTemplate = `
+    <a href="" class="card__link" target="_blank"></a>
     <img src="<%=require('../../images/cardimage.jpg')%>" alt="изображение новости" class="card__image"/>
           <button class="card__icon card__icon_type_keyword card__icon_visibility_hidden" type="button"></button>
           <button class="card__icon card__icon_type_save" type="button"></button>
@@ -31,9 +32,11 @@ export default class NewsCard {
     const cardTitle = card.querySelector('.card__title');
     const cardText = card.querySelector('.card__text');
     const cardSource = card.querySelector('.card__source');
+    const cardLink = card.querySelector('.card__link');
 
     if (isLoggedIn === 'false') {
       image.setAttribute('src', data.urlToImage);
+      cardLink.setAttribute('href', data.link);
       buttonDescription.classList.remove('card__icon_visibility_hidden');
       buttonDescription.textContent = 'Войдите, чтобы сохранять статьи';
       newsDate.setAttribute('datetime', data.publishedAt);
@@ -45,6 +48,7 @@ export default class NewsCard {
 
     if (isLoggedIn === 'true') {
       image.setAttribute('src', data.urlToImage);
+      cardLink.setAttribute('href', data.url);
       buttonDescription.classList.add('card__icon_visibility_hidden');
       newsDate.setAttribute('datetime', data.publishedAt);
       newsDate.textContent = dateToString(data.publishedAt);
