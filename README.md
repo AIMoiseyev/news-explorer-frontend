@@ -46,5 +46,3 @@
 ## Github pages:
 https://aimoiseyev.github.io/news-explorer-frontend/
 
-## Планы по развитию
-дописать логику работы проекта на JavaScript
