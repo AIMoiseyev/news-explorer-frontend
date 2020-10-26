@@ -25,8 +25,7 @@ export default class NewsCard {
     card.insertAdjacentHTML('afterbegin', cardTemplate)
 
     const image = card.querySelector('.card__image');
-    const buttonSave = card.querySelector('.card__icon_type_save');
-    this.buttonSave = buttonSave;
+    this.buttonSave = card.querySelector('.card__icon_type_save');
     const buttonDescription = card.querySelector('.card__icon_type_description');
     const newsDate = card.querySelector('.card__date');
     const cardTitle = card.querySelector('.card__title');
@@ -47,25 +46,25 @@ export default class NewsCard {
 
     if (isLoggedIn === 'true') {
       buttonDescription.classList.add('card__icon_visibility_hidden');
-      this.setEventListeners(data, keyWord)
+      this._setEventListeners(data, keyWord)
     }
     return card
   }
 
-  setEventListeners = (data, keyWord) => {
-    this.buttonSave.addEventListener('click', (event) => this.handleArticles(event, data, keyWord))
+  _setEventListeners = (data, keyWord) => {
+    this.buttonSave.addEventListener('click', (event) => this._handleArticles(event, data, keyWord))
   }
 
-  handleArticles = (event, data, keyWord) => {
+  _handleArticles = (event, data, keyWord) => {
     const card = event.target.closest('.card')
     if (!card.id) {
-      this.saveArticle(event, data, keyWord, card)
+      this._saveArticle(event, data, keyWord, card)
     } else {
-      this.deleteArticle(event, card)
+      this._deleteArticle(event, card)
     }
   }
 
-  saveArticle = (event, data, keyWord, card) => {
+  _saveArticle = (event, data, keyWord, card) => {
     this.mainApi.createArticle(data, keyWord).then((data) => {
       console.log('das', data.data.id)
       event.target.classList.remove('card__icon_type_save')
@@ -76,7 +75,7 @@ export default class NewsCard {
     })
   }
 
-  deleteArticle = (event, card) => {
+  _deleteArticle = (event, card) => {
     this.mainApi.deleteArticle(card.id).then((data) => {
       event.target.classList.remove('card__icon_type_saved')
       event.target.classList.add('card__icon_type_save')
@@ -84,8 +83,5 @@ export default class NewsCard {
     }).catch((err) => {
       console.log(err)
     })
-  }
-  renderIcon = () => {
-
   }
 }
