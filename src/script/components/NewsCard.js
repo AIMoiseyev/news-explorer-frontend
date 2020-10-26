@@ -34,40 +34,31 @@ export default class NewsCard {
     const cardSource = card.querySelector('.card__source');
     const cardLink = card.querySelector('.card__link');
 
-    if (isLoggedIn === 'false') {
-      image.setAttribute('src', data.urlToImage);
-      cardLink.setAttribute('href', data.link);
-      buttonDescription.classList.remove('card__icon_visibility_hidden');
-      buttonDescription.textContent = 'Войдите, чтобы сохранять статьи';
-      newsDate.setAttribute('datetime', data.publishedAt);
-      newsDate.textContent = dateToString(data.publishedAt);
-      cardTitle.textContent = data.title;
-      cardText.textContent = data.description;
-      cardSource.textContent = data.source.name;
-    }
+    image.setAttribute('src', data.urlToImage);
+    cardLink.setAttribute('href', data.url);
+    buttonDescription.classList.remove('card__icon_visibility_hidden');
+    buttonDescription.textContent = 'Войдите, чтобы сохранять статьи';
+    newsDate.setAttribute('datetime', data.publishedAt);
+    newsDate.textContent = dateToString(data.publishedAt);
+    cardTitle.textContent = data.title;
+    cardText.textContent = data.description;
+    cardSource.textContent = data.source.name;
+
 
     if (isLoggedIn === 'true') {
-      image.setAttribute('src', data.urlToImage);
-      cardLink.setAttribute('href', data.url);
       buttonDescription.classList.add('card__icon_visibility_hidden');
-      newsDate.setAttribute('datetime', data.publishedAt);
-      newsDate.textContent = dateToString(data.publishedAt);
-      cardTitle.textContent = data.title;
-      cardText.textContent = data.description;
-      cardSource.textContent = data.source.name;
       this.setEventListeners(data, keyWord)
     }
     return card
   }
 
   setEventListeners = (data, keyWord) => {
-      this.buttonSave.addEventListener('click', (event) => this.handleArticles(event, data, keyWord))
+    this.buttonSave.addEventListener('click', (event) => this.handleArticles(event, data, keyWord))
   }
 
   handleArticles = (event, data, keyWord) => {
     const card = event.target.closest('.card')
-    console.log(card)
-    if(!card.id) {
+    if (!card.id) {
       this.saveArticle(event, data, keyWord, card)
     } else {
       this.deleteArticle(event, card)
@@ -75,24 +66,24 @@ export default class NewsCard {
   }
 
   saveArticle = (event, data, keyWord, card) => {
-      this.mainApi.createArticle(data, keyWord).then((data) => {
-        console.log('das', data.data.id)
-        event.target.classList.remove('card__icon_type_save')
-        event.target.classList.add('card__icon_type_saved')
-        card.setAttribute('id', data.data.id)
-      }).catch((err) => {
-        console.log(err)
-      })
+    this.mainApi.createArticle(data, keyWord).then((data) => {
+      console.log('das', data.data.id)
+      event.target.classList.remove('card__icon_type_save')
+      event.target.classList.add('card__icon_type_saved')
+      card.setAttribute('id', data.data.id)
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   deleteArticle = (event, card) => {
-      this.mainApi.deleteArticle(card.id).then((data) => {
-        event.target.classList.remove('card__icon_type_saved')
-        event.target.classList.add('card__icon_type_save')
-        card.removeAttribute('id')
-      }).catch((err) => {
-        console.log(err)
-      })
+    this.mainApi.deleteArticle(card.id).then((data) => {
+      event.target.classList.remove('card__icon_type_saved')
+      event.target.classList.add('card__icon_type_save')
+      card.removeAttribute('id')
+    }).catch((err) => {
+      console.log(err)
+    })
   }
   renderIcon = () => {
 

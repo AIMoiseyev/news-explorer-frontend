@@ -12,12 +12,12 @@ export default class SearchedNews {
     this.api.getArticles().then((data) => {
       this.newsData = data.data
       this.newsQuantity = data.data.length
-      this.renderTitle(this.newsQuantity)
-      this.renderSubtitle()
+      this._renderTitle(this.newsQuantity)
+      this._renderSubtitle()
     })
   }
 
-  renderTitle = (newsQuantity) => {
+  _renderTitle = (newsQuantity) => {
     this.api.getUser().then((res) => {
       this.newsTitle = this.container.querySelector('.searched-news__title');
       if (newsQuantity === 0) {
@@ -35,7 +35,7 @@ export default class SearchedNews {
     })
   }
 
-  renderSubtitle = () => {
+  _renderSubtitle = () => {
     const quantityKeyWords = {}
     const keyWords = this.newsData.map(elem => {
       return elem.keyword

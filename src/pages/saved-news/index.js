@@ -17,7 +17,6 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
   const logoutButton = headerContainer.querySelector('.header__button-text');
   const showMoreButton = document.querySelector('.news__button')
   const newsContainer = document.querySelector('.news');
-  const preloader = document.querySelector('.preloader');
   const searchedNewsContainer = document.querySelector('.searched-news')
   const mobileOpenButton = document.querySelector('.header__menu');
   const mobileCloseButton = document.querySelector('.header__menu-close');
@@ -27,11 +26,12 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
   const searchedNews = new SearchedNews(searchedNewsContainer, mainApi);
   searchedNews.render()
   const card = new SavedCard(mainApi);
-  const cardList = new SavedCardList(showMoreButton, card, newsContainer, preloader, mainApi)
+  const cardList = new SavedCardList(showMoreButton, card, newsContainer, mainApi)
   cardList.renderInitialResults();
-  cardList.addEventListeners()
   const header = new Header(logoutButton, headerContainer, mainApi, MAIN_PATH);
   header.render()
+
+
   mobileOpenButton.addEventListener('click', () => mobileMenuOpen(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
   mobileCloseButton.addEventListener('click', () => mobileMenuClose(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
 

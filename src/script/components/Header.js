@@ -44,17 +44,23 @@ export default class Header extends BaseComponent {
 
   render = () => {
     return this.mainApi.getUser().then((data) => {
-      console.log('render', data)
       if (data) {
         this._setLoginHeader(data)
         localStorage.setItem('loggedIn', 'true');
       } else {
         this._setLogoutHeader()
         localStorage.setItem('loggedIn', 'false');
+        if(window.location.pathname !== this.mainPath) {
+          window.location.replace(this.mainPath);
+        }
       }
     }).catch((err) => {
       this._setLogoutHeader()
       localStorage.setItem('loggedIn', 'false');
+      if(window.location.pathname !== this.mainPath) {
+        window.location.replace(this.mainPath);
+        return;
+      }
       throw new Error(err)
     })
   }
