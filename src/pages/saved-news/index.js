@@ -10,7 +10,6 @@ import SearchedNews from "../../script/components/SearchedNews";
 import mobileMenuOpen from "../../script/utils/mobile-menu-open";
 import mobileMenuClose from "../../script/utils/mobile-menu-close";
 
-
 (function () {
   const mainApi = new MainApi(MAIN_API_OPTIONS);
   const pageElement = document.querySelector('.page');
@@ -24,17 +23,13 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
   const mobileCloseButton = document.querySelector('.header__menu-close');
 
   const searchedNews = new SearchedNews(searchedNewsContainer, mainApi);
-  searchedNews.render();
-
   const card = new SavedCard(mainApi);
   const cardList = new SavedCardList(showMoreButton, card, newsContainer, mainApi)
-  cardList.renderInitialResults();
-
   const header = new Header(logoutButton, headerContainer, mainApi, MAIN_PATH);
+
+  searchedNews.render();
+  cardList.renderInitialResults();
   header.render()
-
-
   mobileOpenButton.addEventListener('click', () => mobileMenuOpen(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
   mobileCloseButton.addEventListener('click', () => mobileMenuClose(mobileOpenButton, mobileCloseButton, headerNavigation, pageElement));
-
 })();
