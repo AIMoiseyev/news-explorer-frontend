@@ -19,12 +19,12 @@ export default class Form extends BaseComponent {
     this.inputs = inputs
 
 
-    this.checkCustomValidity(event.target);
+    this._checkCustomValidity(event.target);
 
     if (inputs.every(this._validateInputElement)) {
-      this.setSubmitButtonState(this.submitButton, true);
+      this._setSubmitButtonState(this.submitButton, true);
     } else {
-      this.setSubmitButtonState(this.submitButton, false);
+      this._setSubmitButtonState(this.submitButton, false);
     }
   }
 
@@ -63,14 +63,14 @@ export default class Form extends BaseComponent {
     return input.checkValidity();
   }
 
-  checkCustomValidity = (input) => {
+  _checkCustomValidity = (input) => {
     const error = input.nextElementSibling;
     const correct = this._validateInputElement(input);
     error.textContent = input.validationMessage;
     return correct;
   }
 
-  setSubmitButtonState = (button, state) => {
+  _setSubmitButtonState = (button, state) => {
     if (state) {
       button.removeAttribute("disabled");
       button.classList.add("popup__button_active");
@@ -84,17 +84,16 @@ export default class Form extends BaseComponent {
 
   setEventListeners = () => {
     this.container.addEventListener("input", this._validateForm);
-    this._setHandlers(this.submitButton, this.submit);
-    // this._setHandlers(this.redirectButton, this.redirect)
+    this._setHandlers(this.submitButton, this._submit);
   }
 
-  submit = (event) => {
+  _submit = (event) => {
     event.preventDefault()
-    if(this.container.name === 'signup') this.singUp();
-    if(this.container.name === 'signin') this.signIn();
+    if(this.container.name === 'signup') this._singUp();
+    if(this.container.name === 'signin') this._signIn();
   }
 
-  singUp = () => {
+  _singUp = () => {
     const values = {}
     this.inputs.forEach((input) => {
       if (input.tagName === 'INPUT') {
@@ -108,7 +107,7 @@ export default class Form extends BaseComponent {
       this._clear()
       this.regPopup.open()
     }).catch((err) => {
-      this.setSubmitButtonState(this.submitButton, false)
+      this._setSubmitButtonState(this.submitButton, false)
       const error = this.submitButton.previousElementSibling;
       if (err === 400) {
         error.textContent = 'Поля заполнены неверно'
@@ -120,7 +119,7 @@ export default class Form extends BaseComponent {
     })
   }
 
-  signIn = () => {
+  _signIn = () => {
     const values = {}
     this.inputs.forEach((input) => {
       if (input.tagName === 'INPUT') {
@@ -136,7 +135,7 @@ export default class Form extends BaseComponent {
       localStorage.setItem('loggedIn', 'true');
       window.location.reload();
     }).catch((err) => {
-      this.setSubmitButtonState(this.submitButton, false)
+      this._setSubmitButtonState(this.submitButton, false)
       const error = this.submitButton.previousElementSibling;
       if (err === 401) {
         error.textContent = 'Неправильные почта или пароль'
@@ -151,9 +150,4 @@ export default class Form extends BaseComponent {
   _clear = () => {
     this.container.reset()
   }
-
-  // Неправильный формат email
-  // Пароль должен быть от 8 до 30 символов
-  // Имя должно быть от 2 до 30 символов
-  // Такой пользователь уже есть
 }
