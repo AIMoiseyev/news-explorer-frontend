@@ -56,7 +56,6 @@ export default class Header extends BaseComponent {
       }
     }).catch((err) => {
       this._setLogoutHeader()
-      console.log(window.location.pathname)
       localStorage.setItem('loggedIn', 'false');
       if(window.location.pathname !== this.mainPath) {
         window.location.replace(this.mainPath);
