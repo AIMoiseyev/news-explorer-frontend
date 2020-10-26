@@ -13,21 +13,23 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
 
 (function () {
   const mainApi = new MainApi(MAIN_API_OPTIONS);
+  const pageElement = document.querySelector('.page');
   const headerContainer = document.querySelector('.header');
-  const logoutButton = headerContainer.querySelector('.header__button-text');
-  const showMoreButton = document.querySelector('.news__button')
   const newsContainer = document.querySelector('.news');
-  const searchedNewsContainer = document.querySelector('.searched-news')
+  const searchedNewsContainer = document.querySelector('.searched-news');
+  const headerNavigation = document.querySelector('.header__navigation');
+  const logoutButton = headerContainer.querySelector('.header__button-text');
+  const showMoreButton = document.querySelector('.news__button');
   const mobileOpenButton = document.querySelector('.header__menu');
   const mobileCloseButton = document.querySelector('.header__menu-close');
-  const pageElement = document.querySelector('.page');
-  const headerNavigation = document.querySelector('.header__navigation');
 
   const searchedNews = new SearchedNews(searchedNewsContainer, mainApi);
-  searchedNews.render()
+  searchedNews.render();
+
   const card = new SavedCard(mainApi);
   const cardList = new SavedCardList(showMoreButton, card, newsContainer, mainApi)
   cardList.renderInitialResults();
+
   const header = new Header(logoutButton, headerContainer, mainApi, MAIN_PATH);
   header.render()
 
