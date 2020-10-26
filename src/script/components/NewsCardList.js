@@ -11,7 +11,7 @@ export default class NewsCardList extends BaseComponent {
     this.newsContainer = container.querySelector('.news__grid-container')
   }
 
-  addCard = (card) => {
+  _addCard = (card) => {
     this.newsContainer.appendChild(card)
   }
 
@@ -20,12 +20,14 @@ export default class NewsCardList extends BaseComponent {
     this.keyWord = value;
     if (data.length > 3) {
       for (let i = 0; i <= 2; i++) {
-        this.addCard(this.card.create(data[i], value))
+        this._addCard(this.card.create(data[i], value))
         this.showMoreButton.classList.add('news__button_visible')
+        this._setHandlers(this.showMoreButton, this._showMore)
       }
     } else {
       data.forEach(elem => {
-        this.addCard(this.card.create(elem, value))
+        this._addCard(this.card.create(elem, value))
+        this._removeHandlers(this.showMoreButton, this._showMore)
         this.showMoreButton.classList.remove('news__button_visible')
       })
     }
@@ -55,7 +57,7 @@ export default class NewsCardList extends BaseComponent {
     }
   }
 
-  showMore = () => {
+  _showMore = () => {
     if (this.data.length > 0 && this.data.length <= 3) {
       this.data = this.data.slice(3)
       this.renderResults(this.data, this.keyWord)
@@ -66,10 +68,6 @@ export default class NewsCardList extends BaseComponent {
     } else {
       console.log('finish')
     }
-  }
-
-  addEventListeners = () => {
-    this._setHandlers(this.showMoreButton, this.showMore)
   }
 
   clearContainer = () => {

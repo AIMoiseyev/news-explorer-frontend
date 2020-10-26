@@ -42,7 +42,6 @@ export default class SearchForm extends BaseComponent {
     }
     this.cardList.renderLoader(true)
     this.api.getNews(value).then((data) => {
-      console.log(data)
       if (data.articles.length === 0) {
         this.cardList.renderSection(false)
         this.cardList.clearContainer()

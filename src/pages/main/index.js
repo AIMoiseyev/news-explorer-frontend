@@ -46,8 +46,6 @@ import mobileMenuClose from "../../script/utils/mobile-menu-close";
   const header = new Header(logoutButton, headerContainer, mainApi, MAIN_PATH);
   const card = new NewsCard(newsApi, mainApi);
   const cardList = new NewsCardList(showMoreButton, card, newsContainer, preloader)
-  cardList.addEventListeners()
-
   const popupSignIn = new Popup(signInPopupCloseButton, popupSignInContainer, pageElement);
   const popupSignUp = new Popup(signUpPopupCloseButton, popupSignContainer, pageElement);
 
