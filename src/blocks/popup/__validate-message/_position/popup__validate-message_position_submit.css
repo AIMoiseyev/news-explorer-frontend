@@ -1,5 +1,5 @@
 .popup__validate-message_position_submit {
-  bottom: 142px;
+  bottom: 108px;
   left: 50%;
   transform: translate(-50%);
   min-width: 180px;
@@ -7,6 +7,6 @@
 
 @media (max-width: 700px) {
   .popup__validate-message_position_submit {
-    top: 308px;
+    bottom: 102px;
   }
 }

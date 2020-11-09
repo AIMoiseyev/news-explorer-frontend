@@ -43,6 +43,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.1",
-    "postcss": "^8.1.1"
+    "postcss": "^8.1.1",
+    "validator": "^13.1.17"
   }
 }

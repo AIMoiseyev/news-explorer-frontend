@@ -1,0 +1,5 @@
+@import url(./_visible/news__error-message_visible.css);
+
+.news__error-message {
+  display: none;
+}
