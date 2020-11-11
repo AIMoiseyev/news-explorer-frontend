@@ -43,6 +43,8 @@
     - Production-build - `npm run build`, `const MAIN_PATH = '/news-explorer-frontend/'`
     - Production-build на github pages - `npm run deploy`
 
+## news-explorer-api:
+https://github.com/AIMoiseyev/news-explorer-api
 ## Github pages:
 https://aimoiseyev.github.io/news-explorer-frontend/
 
